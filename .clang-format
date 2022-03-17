@@ -1,0 +1,106 @@
+---
+AccessModifierOffset: -4
+AlignAfterOpenBracket: Align
+# AlignArrayOfStructures: Right
+AlignConsecutiveAssignments: Consecutive
+AlignConsecutiveBitFields: Consecutive
+AlignConsecutiveDeclarations: Consecutive
+AlignEscapedNewlines: DontAlign
+AlignOperands: AlignAfterOperator
+AlignTrailingComments: true
+AllowAllArgumentsOnNextLine: false
+AllowAllParametersOfDeclarationOnNextLine: false
+AllowShortBlocksOnASingleLine: Empty
+AllowShortCaseLabelsOnASingleLine: false
+AllowShortEnumsOnASingleLine: false
+AllowShortFunctionsOnASingleLine: Empty
+AllowShortIfStatementsOnASingleLine: Never
+AllowShortLambdasOnASingleLine: Inline
+AllowShortLoopsOnASingleLine: false
+AlwaysBreakAfterReturnType: None # not sure
+AlwaysBreakBeforeMultilineStrings: false
+AlwaysBreakTemplateDeclarations: Yes
+BinPackArguments: false
+BinPackParameters: false
+BitFieldColonSpacing: After
+BreakBeforeBraces: Custom
+BraceWrapping:
+  AfterCaseLabel: false
+  AfterClass: false # TODO: check, doc says it wrong?
+  AfterControlStatement: MultiLine
+  AfterEnum: false
+  AfterFunction: false # reconsider?
+  AfterNamespace: false
+  AfterStruct: false
+  AfterUnion: false
+  AfterExternBlock: false
+  BeforeCatch: true
+  BeforeElse: false
+  BeforeLambdaBody: false
+  BeforeWhile: false
+BreakBeforeBinaryOperators: NonAssignment
+BreakBeforeTernaryOperators: true
+BreakConstructorInitializers: AfterColon
+BreakInheritanceList: AfterColon
+BreakStringLiterals: true
+ColumnLimit: 120
+CompactNamespaces: true
+ConstructorInitializerIndentWidth: 4
+ConstructorInitializerAllOnOneLineOrOnePerLine: true
+ContinuationIndentWidth: 2 # not sure
+Cpp11BracedListStyle: false
+DeriveLineEnding: false
+DerivePointerAlignment: false
+# EmptyLineAfterAccessModifier: Never TODO: clang 13
+EmptyLineBeforeAccessModifier: LogicalBlock
+FixNamespaceComments: true
+IncludeBlocks: Preserve
+# IndentAccessModifiers: false TODO: clang 13
+IndentCaseBlocks: false
+IndentCaseLabels: false
+IndentExternBlock: Indent
+IndentGotoLabels: false
+IndentPPDirectives: None
+# IndentRequiresClause: true TODO: clang 13
+IndentWidth: 4
+IndentWrappedFunctionNames: true
+KeepEmptyLinesAtTheStartOfBlocks: false
+# LambdaBodyIndentation: OuterScope TODO: clang 13
+MaxEmptyLinesToKeep: 2
+NamespaceIndentation: None
+# PackConstructorInitializers: Never TODO: clang 14
+# TODO: view penalties
+PenaltyReturnTypeOnItsOwnLine: 0
+PointerAlignment: Left
+# QualifierAlignmentStyle: Leave TODO: clang 14
+# QualifierOrder: ['static', 'inline', 'type', 'const', 'volatile']  TODO: clang 14
+ReflowComments: true
+# RequiresClausePosition not sure
+# SeparateDefinitionBlocks: Always
+# SortIncludes: CaseInsensitive TODO:
+SortUsingDeclarations: true
+SpaceAfterCStyleCast: true
+SpaceAfterLogicalNot: false
+SpaceAfterTemplateKeyword: false
+SpaceBeforeAssignmentOperators: true
+SpaceBeforeCaseColon: false
+SpaceBeforeCpp11BracedList: true
+SpaceBeforeCtorInitializerColon: true
+SpaceBeforeInheritanceColon : true
+SpaceBeforeParens: ControlStatements
+SpaceBeforeRangeBasedForLoopColon: true
+SpaceBeforeSquareBrackets: false
+SpaceInEmptyBlock: true
+SpaceInEmptyParentheses: false
+SpacesBeforeTrailingComments: 1
+# SpacesInAngles: Leave TODO
+SpacesInCStyleCastParentheses: false
+SpacesInConditionalStatement: false
+# SpacesInLineCommentPrefix:  TODO: clang 13
+#   Minimum: 1
+#   Maximum: -1
+SpacesInParentheses: false
+SpacesInSquareBrackets: false
+Standard: c++17
+UseCRLF: false
+UseTab: Never

@@ -1,0 +1,142 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Server",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/Debug/bin/server",
+            "args": [
+                "-d",
+                "${workspaceFolder}/tests/dbs/example"
+            ],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "windows": {
+                "miDebuggerPath": "C:\\tools\\msys64\\mingw64\\bin\\gdb.exe",
+            },
+            "linux": {
+                "miDebuggerPath": "/usr/bin/gdb",
+            },
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
+            "name": "Query",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/Debug/bin/query",
+            "args": [
+                "${workspaceFolder}/tests/query_debug"
+            ],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "windows": {
+                "miDebuggerPath": "C:\\tools\\msys64\\mingw64\\bin\\gdb.exe",
+            },
+            "linux": {
+                "miDebuggerPath": "/usr/bin/gdb",
+            },
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
+            "name": "ImportDB",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/Debug/bin/create_db",
+            "args": [
+                "-f",
+                "${workspaceFolder}/tests/dbs/example-db.txt",
+                "-d",
+                "${workspaceFolder}/tests/dbs/debug"
+            ],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "windows": {
+                "miDebuggerPath": "C:\\tools\\msys64\\mingw64\\bin\\gdb.exe",
+            },
+            "linux": {
+                "miDebuggerPath": "/usr/bin/gdb",
+            },
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
+            "name": "Create BPTree",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/Debug/bin/create_bpt",
+            "args": [
+                "10000000",
+            ],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "windows": {
+                "miDebuggerPath": "C:\\tools\\msys64\\mingw64\\bin\\gdb.exe",
+            },
+            "linux": {
+                "miDebuggerPath": "/usr/bin/gdb",
+            },
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        },
+        {
+            "name": "BPTree Check",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/build/Debug/bin/check_bpts",
+            "args": [ ],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "windows": {
+                "miDebuggerPath": "C:\\tools\\msys64\\mingw64\\bin\\gdb.exe",
+            },
+            "linux": {
+                "miDebuggerPath": "/usr/bin/gdb",
+            },
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        }
+    ]
+}
