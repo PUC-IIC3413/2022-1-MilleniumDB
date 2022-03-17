@@ -38,7 +38,7 @@ If you work on windows, you can use Windows Subsystem for Linux (WSL).
 
     For distributions based on **Ubuntu 20.04 or newer** this can be done by running:
     - `sudo apt update`
-    - `sudo apt install git g++ cmake libboost-all-dev`
+    - `sudo apt install bzip2 git g++ cmake libboost-all-dev gdb`
 
      Other linux distributions may need to install the prerequisites differenlty. Some distributions might have repositories with too old versions and the project won't compile, in that case you'll need to manually install the appropiate versions.
 
@@ -51,12 +51,11 @@ If you work on windows, you can use Windows Subsystem for Linux (WSL).
 The command to create a new database looks like this:
 - `build/Release/bin/create_db [path/to/import_file] [path/to/new_database_folder]`
 
-If you want to import a big database you should to specify a custom buffer size with the option `-b`. The parameter tells how many pages the buffer will allocate. Pages have a size of 4KB and the default buffer size is 1GB.
-
-For instance, if you want to create a database into the folder `tests/dbs/snb` using the example we provide in `tests/dbs/snb.txt` having a 4GB buffer (4GB = 4KB * 1024 * 1024 and 1024 * 1024 = 1048576) you need to run:
+For instance, if you want to create a database into the folder `tests/dbs/snb` using the example we provide in `tests/dbs/snb.txt` you need to run:
+- `bzip2 -k -d tests/dbs/snb.txt.bz2` (to decompress the example file)
 - `build/Release/bin/create_db tests/dbs/snb.txt tests/dbs/snb -b 1048576`
 
-To delete a database just manually delete the created folder.
+To delete a database just manually delete the created folder: `rm -r [path/to/database_folder]`.
 
 # Querying a database
 We implement the typical a client/server model, so in order to query a database, you need to have a server running and then send queries to it.
