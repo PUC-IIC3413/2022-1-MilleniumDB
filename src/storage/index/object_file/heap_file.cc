@@ -24,6 +24,8 @@ std::string HeapFile::get_string(uint64_t id) const {
     {
         return NULL;
     };
+
+    // Continuar aqui
 }
 
 
