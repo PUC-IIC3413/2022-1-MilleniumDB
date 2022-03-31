@@ -1,0 +1,7 @@
+w hola
+w funcionando
+r 0
+w test
+r 1
+r 0
+r 2
