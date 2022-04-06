@@ -51,6 +51,10 @@ int main(int argc, char **argv) {
                 auto id = stoi(info);
                 auto str = heap_file.get_string(id);
                 outfile << str << "\n";
+            } else if(order == "d") {
+                auto id = stoi(info);
+                heap_file.remove(id);
+                outfile << "remove\n";
             }
         }
         testfile.close();
