@@ -4,11 +4,12 @@
 #include <limits>
 
 #include "query_optimizer/quad_model/plan/join/index_nested_loop_plan.h"
+#include "query_optimizer/quad_model/plan/join/dummy_join_plan.h"
 
 using namespace std;
 
 unique_ptr<Plan> GreedyOptimizer::get_plan(vector<unique_ptr<Plan>> base_plans,
-                                           const vector<string>& var_names)
+                                           const vector<string>& /*var_names*/)
 {
     const auto base_plans_size = base_plans.size();
     assert(base_plans_size > 0);
@@ -19,8 +20,6 @@ unique_ptr<Plan> GreedyOptimizer::get_plan(vector<unique_ptr<Plan>> base_plans,
     for (size_t j = 0; j < base_plans_size; j++) {
         // base_plans[j]->set_input_vars(input_vars);
         auto current_element_cost = base_plans[j]->estimate_cost();
-        base_plans[j]->print(std::cout, 0, var_names);
-        std::cout << "\n";
         if (current_element_cost < best_cost) {
             best_cost = current_element_cost;
             best_index = j;
@@ -38,7 +37,7 @@ unique_ptr<Plan> GreedyOptimizer::get_plan(vector<unique_ptr<Plan>> base_plans,
             if (base_plans[j] != nullptr
                 && !base_plans[j]->cartesian_product_needed(*root_plan) )
             {
-                auto nested_loop_plan = make_unique<IndexNestedLoopPlan>(root_plan->duplicate(), base_plans[j]->duplicate());
+                auto nested_loop_plan = make_unique<DummyJoinPlan>(root_plan->duplicate(), base_plans[j]->duplicate());
                 auto nested_loop_cost = nested_loop_plan->estimate_cost();
 
                 if (nested_loop_cost < best_cost) {
@@ -65,7 +64,7 @@ unique_ptr<Plan> GreedyOptimizer::get_plan(vector<unique_ptr<Plan>> base_plans,
                 if (base_plans[j] == nullptr) {
                     continue;
                 }
-                auto nested_loop_plan = make_unique<IndexNestedLoopPlan>(root_plan->duplicate(), base_plans[j]->duplicate());
+                auto nested_loop_plan = make_unique<DummyJoinPlan>(root_plan->duplicate(), base_plans[j]->duplicate());
                 auto nested_loop_cost = nested_loop_plan->estimate_cost();
 
                 if (nested_loop_cost <= best_cost) {

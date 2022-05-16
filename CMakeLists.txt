@@ -34,16 +34,17 @@ list(REMOVE_ITEM sources ${CMAKE_CURRENT_SOURCE_DIR}/src/tests/*)
 add_library(millenniumdb STATIC ${sources})
 
 set(BUILD_TARGETS
-    create_db
-    query
-    server
+    # create_db
+    # query
+    # server
 )
 
 set(TEST_TARGETS
-    create_bpt
-    check_bpts
-    check_extendible_hash
-    execute_query
+    # create_bpt
+    # check_bpts
+    # check_extendible_hash
+    # execute_query
+    lab4
 )
 
 foreach(target ${BUILD_TARGETS})

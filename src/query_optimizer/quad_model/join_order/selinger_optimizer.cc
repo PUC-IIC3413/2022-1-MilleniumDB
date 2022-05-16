@@ -6,6 +6,7 @@
 #include <limits>
 
 #include "query_optimizer/quad_model/plan/join/index_nested_loop_plan.h"
+#include "query_optimizer/quad_model/plan/join/dummy_join_plan.h"
 
 using namespace std;
 
@@ -54,20 +55,17 @@ struct CombinationEnumerator {
 
 
 SelingerOptimizer::SelingerOptimizer(vector<unique_ptr<Plan>> base_plans,
-                                     const std::vector<std::string>& var_names) :
+                                     const std::vector<std::string>& /*var_names*/) :
     plans_size (base_plans.size())
 {
     assert(plans_size > 0);
     optimal_plans = new unique_ptr<Plan>*[plans_size];
 
-    cout << "\nBase Plans:" << plans_size << "\n";
     for (size_t i = 0; i < plans_size; ++i) {
         auto arr_size = nCr(plans_size, i+1);
 
         optimal_plans[i] = new unique_ptr<Plan>[arr_size];
         optimal_plans[0][i] = move(base_plans[i]);
-        optimal_plans[0][i]->print(std::cout, 0, var_names);
-        cout << "\n";
     }
 }
 
@@ -102,7 +100,7 @@ unique_ptr<Plan> SelingerOptimizer::get_plan() {
                 if (arr[bit_pos]) {
                     arr[bit_pos] = false;
 
-                    auto current_plan = make_unique<IndexNestedLoopPlan>(
+                    auto current_plan = make_unique<DummyJoinPlan>(
                         optimal_plans[i-2][get_index(arr, plans_size)]->duplicate(),
                         optimal_plans[0][bit_pos]->duplicate()
                     );
