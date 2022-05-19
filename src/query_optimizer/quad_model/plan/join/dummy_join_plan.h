@@ -18,7 +18,8 @@ public:
     }
 
     double estimate_cost() const override {
-        return lhs->estimate_output_size() + 3*rhs->estimate_output_size();
+        // Este costo no tiene sentido, solo es un intento de que distintos árboles de joins tengan distintos costos
+        return lhs->estimate_cost() + 3*rhs->estimate_cost() + estimate_output_size();
     }
 
     double estimate_output_size() const override {
