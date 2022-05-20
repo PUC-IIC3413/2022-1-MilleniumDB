@@ -19,7 +19,7 @@ int main() {
 
     // Base plans construction
     // ****Example Solution for Bushy Greedy Optimizer: ((B,D),(A,C))****
-    // TODO: ****Example Solution for Exhaustive Optimizer: ****
+    // ****Example Solution for Exhaustive Optimizer: (((B,D),A),C)****
     std::vector<std::unique_ptr<Plan>> base_plans;
     base_plans.push_back(std::make_unique<DummyPlan>(rand(), 'A'));
     base_plans.push_back(std::make_unique<DummyPlan>(rand(), 'B'));
