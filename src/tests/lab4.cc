@@ -20,6 +20,13 @@ int main() {
     // Base plans construction
     // ****Example Solution for Bushy Greedy Optimizer: ((B,D),(A,C))****
     // ****Example Solution for Exhaustive Optimizer: (((B,D),A),C)****
+    /*
+    TODO: Aquí pueden cambiar el ejemplo a evaluar con su optimizador.
+    Basta con agregar/remover componentes al vector de abajo, eligiendo siempre un char distinto
+    como segundo argumento al constructor de DummyPlan.
+    Notar que las soluciones esperadas que salen arriba de este comentario son sólo para el ejemplo default
+    que viene con este archivo (con las relaciones A,B,C,D).
+    */
     std::vector<std::unique_ptr<Plan>> base_plans;
     base_plans.push_back(std::make_unique<DummyPlan>(rand(), 'A'));
     base_plans.push_back(std::make_unique<DummyPlan>(rand(), 'B'));

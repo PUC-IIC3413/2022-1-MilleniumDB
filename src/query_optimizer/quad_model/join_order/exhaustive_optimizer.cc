@@ -14,6 +14,7 @@ unique_ptr<Plan> ExhaustiveOptimizer::get_plan(vector<unique_ptr<Plan>> base_pla
     const auto base_plans_size = base_plans.size();
     assert(base_plans_size > 0);
 
-    // TODO: Work here for the BONUS
+    // TODO: Aquí deben implementar el algoritmo para el BONUS.
+
     return move(base_plans[0]);
 }

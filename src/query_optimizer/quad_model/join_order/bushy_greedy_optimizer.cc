@@ -14,6 +14,11 @@ unique_ptr<Plan> BushyGreedyOptimizer::get_plan(vector<unique_ptr<Plan>> base_pl
     const auto base_plans_size = base_plans.size();
     assert(base_plans_size > 0);
 
+    /*
+    TODO: Aquí deben implementar el método Greedy para planes Bushy.
+    Lo de abajo es sólo un ejemplo visto en la ayudantía que genera el orden de los joins secuencialmente.
+    */
+
     // Trivial join selection in sequence
     auto join_plan = base_plans[0]->duplicate();
     for (size_t i = 1; i < base_plans_size; i++) {
