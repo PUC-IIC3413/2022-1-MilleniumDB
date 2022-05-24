@@ -28,7 +28,8 @@
                 "${workspaceFolder}/third_party/antlr4-runtime-4.9.3/runtime/src",
                 "/usr/include/"
             ],
-            "defines": []
+            "defines": [],
+            "configurationProvider": "ms-vscode.cmake-tools"
         }
     ],
     "version": 4

@@ -44,6 +44,7 @@ set(TEST_TARGETS
     check_bpts
     check_extendible_hash
     execute_query
+    test_lab1
 )
 
 foreach(target ${BUILD_TARGETS})
