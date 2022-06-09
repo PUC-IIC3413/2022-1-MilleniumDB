@@ -14,6 +14,10 @@ public:
 
     std::unique_ptr<Plan> get_plan();
 
+    static bool isAcyclic(std::vector<std::unique_ptr<Plan>>& base_plans);
+    // Bonus
+    static void printJoinTree(std::vector<std::unique_ptr<Plan>>& base_plans);
+
 private:
     const std::size_t plans_size;
 
