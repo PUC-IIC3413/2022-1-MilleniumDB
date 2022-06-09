@@ -39,11 +39,12 @@ set(BUILD_TARGETS
     server
 )
 
-set(TEST_TARGETS
-    create_bpt
-    check_bpts
-    check_extendible_hash
-    execute_query
+set(#TEST_TARGETS
+    #create_bpt
+    #check_bpts
+    #check_extendible_hash
+    #execute_query
+    lab5
 )
 
 foreach(target ${BUILD_TARGETS})
