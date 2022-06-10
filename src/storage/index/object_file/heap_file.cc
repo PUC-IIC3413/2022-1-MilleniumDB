@@ -50,7 +50,7 @@ std::string HeapFile::get_string(uint64_t id) const {
 
 uint64_t HeapFile::write(const std::string& bytes) {
     // Ver largo
-    unsigned short length = bytes.size();
+    unsigned short length = bytes.length();
     if(length > 4084)
     {
         return 0;
@@ -121,7 +121,7 @@ uint64_t HeapFile::write(const std::string& bytes) {
 
     //indicamos la pagina como sucia y le hacemos unpin
     page->make_dirty();
-    // buffer_manager.unpin(page);
+    buffer_manager.unpin(*page);
 
     // Identificador = pointer*(2^16) + dirsize
     uint64_t identificador = page->get_page_number() * 65536 + dirsize - 1;

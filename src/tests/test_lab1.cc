@@ -63,7 +63,6 @@ int main(int argc, char **argv) {
     // buffer_manager y file_manager así lo requieren (Normalmente la destruccion de QuadModel se encarga de eso)
     buffer_manager.~BufferManager();
     file_manager.~FileManager();
-    remove("heapfile.dat");
 
     return 1;
 }
