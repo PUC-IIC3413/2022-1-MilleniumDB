@@ -4,25 +4,22 @@
 #include <set>
 
 #include "query_optimizer/quad_model/join_order/selinger_optimizer.h"
-
 #include "query_optimizer/quad_model/plan/basic/relation_plan.h"
-
 
 // Test Lab 5
 int main() {
-
     std::set<VarId> R;
     std::set<VarId> S;
     std::set<VarId> T;
     std::set<VarId> U;
 
-   auto x = VarId(0);
-   auto y = VarId(1);
-   auto z = VarId(2);
-   auto u = VarId(3);
-   auto v = VarId(4);
-   auto w = VarId(5);
-   auto t = VarId(6);
+    auto x = VarId(0);
+    auto y = VarId(1);
+    auto z = VarId(2);
+    auto u = VarId(3);
+    auto v = VarId(4);
+    auto w = VarId(5);
+    auto t = VarId(6);
 
     R.insert(x);
     R.insert(y);
@@ -32,7 +29,6 @@ int main() {
     S.insert(y);
     S.insert(u);
 
-
     T.insert(x);
     T.insert(v);
     T.insert(w);
@@ -40,7 +36,6 @@ int main() {
     U.insert(x);
     U.insert(v);
     U.insert(t);
-
 
     std::vector<std::unique_ptr<Plan>> base_plans;
     base_plans.push_back(std::make_unique<RelationPlan>(R));

@@ -39,7 +39,7 @@ set(BUILD_TARGETS
     server
 )
 
-set(#TEST_TARGETS
+set(TEST_TARGETS
     #create_bpt
     #check_bpts
     #check_extendible_hash

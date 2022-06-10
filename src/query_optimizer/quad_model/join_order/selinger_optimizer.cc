@@ -153,11 +153,11 @@ uint_fast32_t SelingerOptimizer::get_index(bool* arr, uint_fast32_t size) {
 }
 
 
-bool isAcyclic(std::vector<std::unique_ptr<Plan>>& base_plans) {
+bool SelingerOptimizer::isAcyclic(std::vector<std::unique_ptr<Plan>>& base_plans) {
     return false;
 }
 
 
-void printJoinTree(std::vector<std::unique_ptr<Plan>>& base_plans) {
+void SelingerOptimizer::printJoinTree(std::vector<std::unique_ptr<Plan>>& base_plans) {
     // Bonus
 }
